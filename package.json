@@ -4,14 +4,11 @@
   "description": "a course for running API calls on Playwright",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "export-json": "node --inspect ApiListParser.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@json2csv/plainjs": "^6.1.2",
-    "@playwright/test": "^1.30.0",
-    "xlsx": "^0.18.5"
+    "@playwright/test": "^1.30.0"
   }
 }
