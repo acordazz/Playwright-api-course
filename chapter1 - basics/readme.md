@@ -9,8 +9,8 @@ To create a Playwright project:
 * run the following 
 
 ```
-npm i --save-dev @types/node
 npm init playwright@latest
+npm i --save-dev @types/node
 ```
 Parameters:
 - Typescript
