@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-
+import { test, expect } from "@playwright/test";
 
 test.describe("Using common setup", () => {
   let bookingForBeforeAll: number;
@@ -131,5 +130,23 @@ test.describe("Using common setup", () => {
     const BodySecondPost: any[] = await responseSecondBooking.json();
     const BookingIdSecond = BodySecondPost[0].bookingid;
     console.log(`First booking: ${BookingIdSecond}`);
+  });
+});
+
+/*
+Parameterized tests
+*/
+test.describe("Getting multiple bookings individually", async () => {
+  const bookingId = 1055;
+  test(`Get booking ${bookingId}`, async ({ request }) => {
+    const responseFirstBooking = await request.get(
+      `https://restful-booker.herokuapp.com/booking/${bookingId}`
+    );
+
+    expect(responseFirstBooking.status(), "testing whether status is 200").toBe(
+      200
+    );
+    const bodyJson = await responseFirstBooking.json();
+    console.log(`Booking for id ${bookingId}: ${JSON.stringify(bodyJson)}`);
   });
 });
