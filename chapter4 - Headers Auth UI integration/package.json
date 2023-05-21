@@ -1,0 +1,17 @@
+{
+  "name": "chapter4---headers-auth-ui-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.34.0",
+    "@types/node": "^18.16.13"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0"
+  }
+}
