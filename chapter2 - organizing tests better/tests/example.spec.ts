@@ -60,20 +60,7 @@ test.describe("Using common setup", () => {
   });
 
   test.afterEach(async ({ request }) => {
-    const responseDel = await request.delete(
-      `https://restful-booker.herokuapp.com/booking/${bookingForBeforeEach}`,
-      {
-        headers: {
-          // 'Cookie': `token=${Token}`
-          Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
-        },
-      }
-    );
-
-    expect(
-      responseDel.status(),
-      "testing whether status is 201 (means it was successfully deleted)."
-    ).toBe(201);
+    test.fail()
   });
 
   test.afterAll(async ({ request }) => {
@@ -81,7 +68,6 @@ test.describe("Using common setup", () => {
       `https://restful-booker.herokuapp.com/booking/${bookingForBeforeAll}`,
       {
         headers: {
-          // 'Cookie': `token=${Token}`
           Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
         },
       }
@@ -93,7 +79,7 @@ test.describe("Using common setup", () => {
     ).toBe(201);
   });
 
-  test("Search for a booking and if it is found, delete another one", async ({
+  test("Search for two bookings", async ({
     request,
   }) => {
     const responseFirstBooking = await request.get(
